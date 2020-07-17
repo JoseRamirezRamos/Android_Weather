@@ -41,14 +41,10 @@ class MainActivity : AppCompatActivity() {
 
                 if (response.isSuccessful){
                     setUpWidgets(response.body()?.current)
-                    hourlySummary = response.body()?.hourly?.first()?.weather?.map { "${it.description}" }
+                    hourlySummary = response.body()?.hourly?.map { "${it.weather.first().description}" }
                 } else {
                     displayErrorMessage()
                 }
-
-                val TAG = "MainActivity"
-                Log.i(TAG, "AQUI --> ${response.body()}")
-
             }
         })
     }
@@ -130,10 +126,6 @@ class MainActivity : AppCompatActivity() {
     fun startHourlyActivity(view: View){
         val intent = Intent(this, HourlyActivity::class.java)
         val array = hourlySummary?.toTypedArray()
-
-        val TAG = "MainActivity"
-        Log.i(TAG, "AQUI array --> " + array)
-
         intent.putExtra("HOURLY_SUMMARY", array)
         startActivity(intent)
     }
