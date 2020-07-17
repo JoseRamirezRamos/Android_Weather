@@ -15,7 +15,7 @@ object OpenWeatherClient {
     private const val API_KEY = "d0fd70a2b149f6c18eb0fef30d3a741f"
     private const val UNITS = "metric"
     private const val OPEN_WEATHER_URL = "http://api.openweathermap.org/"
-    private val coordinates = Pair("51.51", "-0.13")
+    private val coordinates = Pair("32.63", "-115.45")
 
     init {
         val builder = OkHttpClient.Builder()
