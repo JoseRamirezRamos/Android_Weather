@@ -1,7 +1,7 @@
 package com.example.weather.data.model
 
 data class Daily (
-    val dt: Long,
+    val dt: Int,
     val sunrise: Long,
     val sunset: Long,
     val temp: Temp,

@@ -1,7 +1,7 @@
 package com.example.weather.data.model
 
 data class Current (
-    val dt: Double,
+    val dt: Int,
     val sunrise: Double,
     val sunset: Double,
     val temp: Double,

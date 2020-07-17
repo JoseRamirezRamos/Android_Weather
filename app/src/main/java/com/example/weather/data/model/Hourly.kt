@@ -1,7 +1,7 @@
 package com.example.weather.data.model
 
 data class Hourly (
-    val dt: Long,
+    val dt: Int,
     val temp: Double,
     val feelsLike: Double,
     val pressure: Long,

@@ -2,6 +2,7 @@ package com.example.weather
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -41,7 +42,9 @@ class MainActivity : AppCompatActivity() {
 
                 if (response.isSuccessful){
                     setUpWidgets(response.body()?.current)
-                    hourlySummary = response.body()?.hourly?.map { "${it.weather.first().description}" }
+                    hourlySummary = response.body()?.hourly?.map {
+                        "${convertTime(it.dt,"MMMM dd, hh:mm")} - ${it.weather.first().description} - ${it.temp.roundToInt()}°C"
+                    }
                 } else {
                     displayErrorMessage()
                 }
@@ -128,6 +131,13 @@ class MainActivity : AppCompatActivity() {
         val array = hourlySummary?.toTypedArray()
         intent.putExtra("HOURLY_SUMMARY", array)
         startActivity(intent)
+    }
+
+    fun convertTime(time: Int, format: String): String{
+        val cal = Calendar.getInstance(Locale.getDefault())
+        cal.timeInMillis = (time * 1000L)
+        val date = DateFormat.format(format, cal).toString().capitalize()
+        return date
     }
 
 }
