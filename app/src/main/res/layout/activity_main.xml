@@ -5,7 +5,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
     <TextView
         android:id="@+id/dateTextView"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Temperature"
+        android:text="@string/temperature"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Humidity"
+        android:text="@string/humidity"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:onClick="startDailyActivity"
-        android:text="Daily"
+        android:text="@string/daily"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -108,7 +108,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:onClick="startHourlyActivity"
-        android:text="Hourly"
+        android:text="@string/hourly"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextView"
-        tools:srcCompat="@drawable/clear_day" />
+        tools:srcCompat="@drawable/clear_day"
+        android:contentDescription="@string/todo" />
 
     <ProgressBar
         android:id="@+id/progressBar"

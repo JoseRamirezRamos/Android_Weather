@@ -1,10 +1,9 @@
-package com.example.weather
+package com.example.weather.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
-import com.google.gson.internal.bind.ArrayTypeAdapter
+import com.example.weather.R
 import kotlinx.android.synthetic.main.activity_hourly.*
 
 class HourlyActivity : AppCompatActivity() {
@@ -12,7 +11,7 @@ class HourlyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hourly)
 
-        val summary = intent.getStringArrayExtra("HOURLY_SUMMARY")
+        val summary = intent.getStringArrayExtra(MainActivity.HOURLY_SUMMARY)
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, summary!!)
         hourlyWeatherList.adapter = adapter
     }
