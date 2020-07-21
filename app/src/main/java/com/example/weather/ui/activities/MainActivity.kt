@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity() {
     private fun getWeather(){
         displayProgressBar(true)
         displayUI(false)
-        OpenWeatherClient.getWeather().enqueue(object : retrofit2.Callback<WeatherClass> {
+        var lang = getString(R.string.lang)
+        OpenWeatherClient.getWeather(lang).enqueue(object : retrofit2.Callback<WeatherClass> {
             override fun onFailure(call: Call<WeatherClass>, t: Throwable) {
                 displayProgressBar(false)
                 displayErrorMessage()

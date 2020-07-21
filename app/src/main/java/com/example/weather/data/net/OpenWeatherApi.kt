@@ -15,7 +15,8 @@ interface OpenWeatherApi {
         @Query("lat")lat: String,
         @Query("lon")lon: String,
         @Query("appid")appid: String,
-        @Query("units")units: String
+        @Query("units")units: String,
+        @Query("lang")lang: String
     ): Call<WeatherClass>
 
 }

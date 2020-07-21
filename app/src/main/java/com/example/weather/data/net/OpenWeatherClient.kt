@@ -16,6 +16,7 @@ object OpenWeatherClient {
     private const val UNITS = "metric"
     private const val OPEN_WEATHER_URL = "http://api.openweathermap.org/"
     private val coordinates = Pair("32.63", "-115.45")
+    private const val LANG = "es"
 
     init {
         val builder = OkHttpClient.Builder()
@@ -29,8 +30,8 @@ object OpenWeatherClient {
         openWeatherApi = retrofit.create(OpenWeatherApi::class.java)
     }
 
-    fun getWeather(lat: String = coordinates.first, lon: String = coordinates.second): Call<WeatherClass> {
-        return openWeatherApi.getWeather(lat,lon, API_KEY, UNITS)
+    fun getWeather(lang: String = LANG, lat: String = coordinates.first, lon: String = coordinates.second): Call<WeatherClass> {
+        return openWeatherApi.getWeather(lat,lon, API_KEY, UNITS, lang)
     }
 
 }
