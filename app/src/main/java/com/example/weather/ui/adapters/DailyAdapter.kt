@@ -8,6 +8,7 @@ import com.example.weather.R
 import com.example.weather.data.model.Daily
 import com.example.weather.ui.convertTime
 import kotlinx.android.synthetic.main.list_item.view.*
+import kotlin.math.roundToInt
 
 class DailyAdapter(private val data: List<Daily>?) :
     RecyclerView.Adapter<DailyAdapter.DailyHolder>() {
@@ -29,8 +30,11 @@ class DailyAdapter(private val data: List<Daily>?) :
     inner class DailyHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(data: Daily) = with(view){
-            dailySummaryTextView.text = data.weather.first().description
             dailyDateTextView.text = convertTime(data.dt, "MMMM dd")
+            var resume = "${data.weather.first().description} " +
+                    "- Max: " + "${data.temp?.max?.roundToInt().toString()}°C " +
+                    "- Min: " + "${data.temp?.min?.roundToInt().toString()}°C "
+            dailySummaryTextView.text = resume
         }
     }
 }

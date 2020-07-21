@@ -51,7 +51,9 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful){
                     setUpWidgets(response.body()?.current)
                     hourlySummary = response.body()?.hourly?.map {
-                        "${convertTime(it.dt,"MMMM dd, hh:mm")} - ${it.weather.first().description} - ${it.temp.roundToInt()}°C"
+                        "${convertTime(it.dt,"MMMM dd, hh:mm")} - " +
+                        "${it.weather.first().description} - " +
+                        getString(R.string.temp_value,it?.temp?.roundToInt().toString())
                     }
                     dailyData = response.body()?.daily
 

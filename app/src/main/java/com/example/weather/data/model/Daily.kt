@@ -23,14 +23,14 @@ data class Daily(
         parcel.readInt(),
         parcel.readLong(),
         parcel.readLong(),
-        TODO("temp"),
-        TODO("feelsLike"),
+        parcel.readParcelable(Temp::class.java.classLoader),
+        parcel.readParcelable(FeelsLike::class.java.classLoader),
         parcel.readLong(),
         parcel.readLong(),
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readLong(),
-        TODO("weather"),
+        parcel.createTypedArrayList(Weather.CREATOR)!!,
         parcel.readLong(),
         parcel.readValue(Double::class.java.classLoader) as? Double,
         parcel.readDouble()
@@ -40,11 +40,14 @@ data class Daily(
         parcel.writeInt(dt)
         parcel.writeLong(sunrise)
         parcel.writeLong(sunset)
+        parcel.writeParcelable(temp, flags)
+        parcel.writeParcelable(feelsLike, flags)
         parcel.writeLong(pressure)
         parcel.writeLong(humidity)
         parcel.writeDouble(dewPoint)
         parcel.writeDouble(windSpeed)
         parcel.writeLong(windDeg)
+        parcel.writeTypedList(weather)
         parcel.writeLong(clouds)
         parcel.writeValue(rain)
         parcel.writeDouble(uvi)
