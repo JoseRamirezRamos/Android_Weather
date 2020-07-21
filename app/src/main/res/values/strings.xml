@@ -2,12 +2,13 @@
     <string name="app_name">Weather</string>
     <string name="daily">Daily</string>
     <string name="hourly">Hourly</string>
-    <string name="todo">TODO</string>
+    <string name="todo" translatable="false">TODO</string>
     <string name="temperature">Temperature</string>
     <string name="humidity">Humidity</string>
     <string name="no_data">No Data</string>
     <string name="network_error">Network Error. Try again later</string>
     <string name="ok">OK</string>
-    <string name="temp_value">%1$s°C</string>
+    <string name="temp_value">%1$s°F</string>
     <string name="humidity_value">%1$s%%</string>
+    <string name="lang">en</string>
 </resources>

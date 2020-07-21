@@ -30,7 +30,7 @@ class DailyAdapter(private val data: List<Daily>?) :
     inner class DailyHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(data: Daily) = with(view){
-            dailyDateTextView.text = convertTime(data.dt, "MMMM dd")
+            dailyDateTextView.text = convertTime(data.dt, "EEEE MMMM dd")
             var resume = "${data.weather.first().description} " +
                     "- Max: " + "${data.temp?.max?.roundToInt().toString()}°C " +
                     "- Min: " + "${data.temp?.min?.roundToInt().toString()}°C "

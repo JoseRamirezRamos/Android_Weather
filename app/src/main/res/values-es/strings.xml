@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clima</string>
+    <string name="daily">Diario</string>
+    <string name="hourly">Hora</string>
+    <string name="temperature">Temperatura</string>
+    <string name="humidity">Humedad</string>
+    <string name="no_data">No Data</string>
+    <string name="network_error">Error de conexion. Reintentar?</string>
+    <string name="ok">OK</string>
+    <string name="temp_value">%1$s°C</string>
+    <string name="humidity_value">%1$s%%</string>
+    <string name="lang">es</string>
+</resources>

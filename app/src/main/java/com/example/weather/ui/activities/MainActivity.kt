@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getDateTime(): String?{
         return try {
-            val format = "MMM d"
+            val format = "MMMM d"
             val simpleDateFormat = SimpleDateFormat(format, Locale.getDefault())
             val date = Calendar.getInstance().time
             simpleDateFormat.format(date)
